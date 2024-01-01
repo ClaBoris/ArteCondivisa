@@ -1,0 +1,162 @@
+
+
+body {
+    height: 80%;
+    background-image: url('../images/wallpaper.jpg'); /* Sostituisci con il percorso dell'immagine */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Aggiungi questa linea */
+}
+
+
+
+.shadow-wrapper {
+  position: relative;
+}
+
+.shadow-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #8a2be2, #c71585); /* Sostituisci con i tuoi colori */
+  z-index: -1;
+  border-radius: 1rem;
+}
+
+footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	height: 20%;
+	font-family: 'Zeyada', cursive;
+}
+
+
+.nav-item{
+	margin-left: -0px;
+	font-size: 30px!important;
+	font-family: 'Zeyada', cursive;
+	margin-bottom: -12px;
+}
+
+.navbar{
+max-height: 150px;
+}
+.navbar-nav{
+padding-top: 5%!important;
+}
+
+.navbar-brand{
+	margin-left: -85px;
+	font-size: 30px!important;
+	font-family: 'Zeyada', cursive;
+	margin-bottom: -12px;
+}
+
+header{
+    text-align: center;
+    padding: 2em;
+    color: black; /* Colore del testo nell'intestazione */
+}
+
+.d-inline-block{
+	margin-left: -58px;
+	margin-bottom: -16px;
+	margin-top: -48px;
+}
+
+footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	height: 20%;
+	font-family: 'Zeyada', cursive;
+	background-color: thistle!important;
+}
+
+.navbar-expand-lg {
+	box-shadow: 0 4px 8px rgba(106, 90, 126, 1.1);
+}
+
+ul{
+display: flex;
+flex-direction: row;
+margin-top: 3%!important;
+margin-bottom: 8%!important;
+justify-content: space-between;
+}
+
+form{
+display: flex;
+flex-direction: column;
+border: 3px solid lightgray;
+border-radius: 1rem;
+background-color: rgba(255, 255, 255, 0.725);
+width: 40%;
+padding: 3%;
+margin: 5%;
+margin-left: 30%;
+margin-right: 5%;
+}
+
+.btn-submit{
+background-color: darkmagenta!important;
+box-shadow: 0px 4px 8px rgba(106,90,126,1.1);
+border-radius: 15px 15px 0;
+color: white!important;
+margin-left: 5%;
+}
+
+.btn{
+background-color: darkmagenta!important;
+box-shadow:0px 4px 8px rgba(106,90,126,1.1);
+border-radius: 15px 15px 0;
+color: white!important;
+margin-left: 0%;
+}
+
+.navbar-collapse{
+	display:flex;
+	justify-content: flex-end;
+	padding-right: 2%;
+}
+.main-container{
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+.card-button{
+display: flex;
+justify-content: center;
+}
+#link-btn{
+text-decoration: none;
+color: white;
+}
+
+nav {
+    background-color:thistle!important; /* Colore di sfondo della barra di navigazione */
+}
+
+.form-container{
+	font-family: 'PT Sans Narrow';
+}
+
+.input-text{
+	margin-bottom:15px!important;
+}
+
+footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	height: 20%;
+	font-family: 'Zeyada', cursive;
+	margin-bottom: -158px;
+}

@@ -1,0 +1,111 @@
+
+nav {
+    background-color:thistle!important; /* Colore di sfondo della barra di navigazione */
+}
+header{
+    text-align: center;
+    padding: 2em;
+    color: black; /* Colore del testo nell'intestazione */
+}
+
+body {
+    height: 80%;
+    background-image: url('../images/wallpaper.jpg'); /* Sostituisci con il percorso dell'immagine */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Aggiungi questa linea */
+}
+.sottotitolo{
+	 font-family: 'Dawning of a New Day', cursive !important;
+	 font-size: 50px!important;
+	 
+}
+.nav-item{
+	margin-left: -0px;
+	font-size: 30px!important;
+	font-family: 'Zeyada', cursive;
+	margin-bottom: -12px;
+}
+
+
+.navbar-brand{
+	margin-left: -85px;
+	font-size: 30px!important;
+	font-family: 'Zeyada', cursive;
+	margin-bottom: -12px;
+}
+
+.d-inline-block{
+	margin-left: -58px;
+	margin-bottom: -16px;
+	margin-top: -48px;
+}
+
+footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	height: 20%;
+	font-family: 'Zeyada', cursive;
+	background-color: thistle!important;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(255, 255, 255, 0.5);  Colore di sfondo con opacità del 70% */
+    z-index: -1;
+}
+
+h1 {
+    font-size: 60px!important;
+    margin-bottom: 0.5em;
+    font-family: 'Leckerli One', cursive;
+    margin-bottom: -1.5rem!important;
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+    width: 5px;
+}
+
+.card-title{
+	font-size: 30px!important;
+	font-family: 'PT Sans Narrow';
+	
+}
+
+.card-text{
+	font-size: 20px!important;
+	font-family: 'PT Sans Narrow';
+}
+
+.mb-3{
+	margin-bottom: 3rem!important;
+	margin-left:350px;
+}
+
+.navbar-expand-lg {
+	box-shadow: 0 4px 8px rgba(106, 90, 126, 1.1);
+}
+
+
+.btn{
+	font-size: 98%;
+	height: 1.5%;
+}
+
+.container{
+	padding: 0.5%!important;
+	height:5%!important;
+}
+
+.navbar-collapse{
+	display:flex;
+	justify-content: flex-end;
+	padding-right: 2%;
+}

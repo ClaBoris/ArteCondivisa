@@ -6,4 +6,6 @@ import it.uniroma3.siw.model.Artist;
 
 public interface ArtistRepository extends CrudRepository<Artist, Long>{
 	 boolean existsByNameAndSurname(String name, String surname);
+
+	 boolean existsByName(String name);
 }

@@ -46,9 +46,9 @@ footer{
 .navbar{
 max-height: 150px;
 }
-/*.navbar-nav{
+.navbar-nav{
 padding-top: 5%!important;
-}*/
+}
 
 .navbar-brand{
 	margin-left: -85px;
@@ -63,6 +63,11 @@ header{
     color: black; /* Colore del testo nell'intestazione */
 }
 
+.d-inline-block{
+	margin-left: -58px;
+	margin-bottom: -16px;
+	margin-top: -48px;
+}
 
 footer{
 	display: flex;
@@ -74,17 +79,17 @@ footer{
 	background-color: thistle!important;
 }
 
-nav {
+.navbar-expand-lg {
 	box-shadow: 0 4px 8px rgba(106, 90, 126, 1.1);
 }
 
-/*ul{
+ul{
 display: flex;
-flex-direction: column!important;
+flex-direction: row;
 margin-top: 3%!important;
 margin-bottom: 8%!important;
 justify-content: space-between;
-}*/
+}
 
 form{
 display: flex;
@@ -154,20 +159,4 @@ footer{
 	height: 20%;
 	font-family: 'Zeyada', cursive;
 	margin-bottom: -158px;
-}
-
-.input-select{
-	border-radius:10pt!important;
-	height:40px!important;
-	/*background:#eeeff4*/
-	border-color:#dee2e6;
-	margin-bottom:2%!important;
-	padding:0.5%;
-	text-align:center;
-	width:60%;
-}
-
-.d-inline-block {
-    /*display: inline-block!important;*/
-    margin-left: -43px;
 }

@@ -67,90 +67,42 @@ li {
 	list-style: none;
 }
 
-.snaps-inline {
-	scroll-snap-type: inline mandatory;
-	scroll-padding-inline: 1rem;
+.artist-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 3%;
+    margin-bottom: 8%;
 }
 
-.snaps-inline>* {
-
-	scroll-snap-align: start;
+.artist-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.container-main-scroller {
-	width: 100%;
+.artist-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3%;
+    margin-bottom: 8%;
 }
 
-.media-scroller {
-	display: grid;
-	gap: 2rem;
-	grid-auto-flow: column;
-	grid-auto-columns: 30%;
-	padding: 0 2rem;
-	overflow-x: auto;
-	overscroll-behavior-inline: contain;
+.artist-table th, .artist-table td {
+    font-family: 'PT Sans Narrow';
+    border: 1px solid darkmagenta;
+    box-shadow: 0px 4px 8px rgba(106, 90, 126, 1.1);
+    padding: 8px;
+    text-align: left;
 }
 
-.card-container {
-	display: block;
-	float: left;
-	width: 30%;
-	margin-left: 1.6%;
-	margin-right: 1.6%;
-	margin-bottom: 20px;
-}
-
-.card-image {
-	overflow: hidden;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	border-top-right-radius: 0.35rem !important;
-	border-top-left-radius: 0.35rem !important;
-}
-
-.card-title {
-	text-align: left;
-	font-weight: bold;
-	font-size: 164% !important;
-	height: 60px;
-	margin-top: 2%;
-	color: darkmagenta !important;
-	margin-bottom: -1%;
-}
-
-.image-fit {
-	width: 100%;
-	height: 100%;
-	object-fit: scale-down;
-	/* Controlla come l'immagine si adatta al contenitore */
-}
-
-.card-body {
-	padding: 10px;
-}
-
-.card-text {
-	text-align: justify;
-	margin-bottom: 30px;
-}
-
-.card {
-	background-color: rgba(255, 255, 255, 0.725) !important;
-}
-
-.card-button {
-	display: flex;
-	justify-content: center;
-}
-
-#link-btn {
-	text-decoration: none;
-	color: white;
-	background-color: darkmagenta !important;
-	box-shadow: 0px 4px 8px rgba(106, 90, 126, 1.1);
-	border-radius: 15px 15px 0;
-	margin-left: 5%;
+.card-button a {
+    text-decoration: none;
+    color: white;
+    background-color: darkmagenta !important;
+    box-shadow: 0px 4px 8px rgba(106, 90, 126, 1.1);
+    border-radius: 15px 15px 0;
+    margin-left: 5%;
+    padding: 8px;
 }
 
 .btn {
@@ -188,6 +140,11 @@ li {
 .move-left{
 	margin-left: -262px;
 	margin-top:20px;
+}
+
+a {
+    color: darkmagenta;
+    text-decoration: none;
 }
 
 .d-inline-block {

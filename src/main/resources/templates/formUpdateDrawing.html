@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/formNewDrawing.css">
     <title>ArteCondivisa</title>
-    <link rel="stylesheet" href="/css/index.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -20,60 +20,51 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-   <img src="../images/logo.png" alt="" width="300" height="200" class="d-inline-block ">
-    <a class="navbar-brand" href="#"> ArteCondivisa</a>
+   <img src="../images/logo.png" alt="" width="200" height="150" class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="#"> Arte Condivisa</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+		  <li class="nav-item">
+			 <a class="nav-link active" aria-current="page" href="/index_home">Home</a>
+		</li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="/formNewArtist">Aggiungi artista</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/register">Register</a>
-        </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="/formNewDrawing">Aggiungi disegno</a>
-        </li>-->
       </ul>
     </div>
   </div>
 </nav>
 <body>
-	<div class="background"></div>
-		<header>
-		<h1>Arte Condivisa</h1>
-		<p class="sottotitolo">Esplora la creatività attraverso i nostri disegni</p>
-	</header>
-	<div class="card-group col-md-6 mb-3">
-  <div class="card">
-    <img class="card-img-top" src="/images/face3.png" alt="Card image cap"  >
-    <div class="card-body">
-      <h5 class="card-title"><strong>Espressioni dell'anima</strong></h5>
-      <p class="card-text">Un viaggio visivo tra sguardi malinconici.</p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="/images/cielo.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title"><strong>Nebbia</strong></h5>
-      <p class="card-text">La nebbia è la tela con cui la natura dipinge paesaggi di mistero e incanto.</p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="/images/grecia.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title"><strong>Grecia Mia</strong></h5>
-      <p class="card-text">I colori del tramonto dipingono il mare e il cielo come un'opera d'arte, mentre la Grecia celebra la bellezza eterna della sua terra.</p>
-    </div>
-  </div>
-</div>
+	<div class="main-container">
+		<div class="form-container">
+			<form th:action="@{/newDrawing/}+${drawing.id}" th:object="${drawing}" method="POST">
+				<h1>Inserisci un nuovo disegno</h1>
+	
+				<label style="font-weight: bolder;">Titolo disegno:</label>
+				<input type="text" th:field="${drawing.name}" class="input-text form-control">
+				<label style="font-weight: bolder;">Link url disegno:</label>
+				<input required type="text" th:field="${drawing.image}" class="input-text form-control">
+				<label style="font-weight: bolder;">Descrizione:</label>
+				<input type="text" th:field="${drawing.description}" class="input-text form-control">
+				<label style="font-weight: bolder;">Aggiungi artista:</label>
+				<div th:if="${artists}"> 
+					<select id="artist" th:field="${drawing.artist}" class="input-select">
+						<option value="">seleziona</option>
+						<option th:each="artist: ${artists}" th:value="${artist.id}" th:text="${artist.name}+' '+${artist.surname}"></option>
+					</select>
+				</div>
+				<div th:unless="${artists}">
+					<h6 style="color:white;">non ci sono artisti nel sistema</h6>
+				</div>
+				<div class="btn-container">
+					<button type="submit" class="btn btn-submit">Aggiungi</button>
+				</div>
+			</form>
+		</div>
 </body>
-
 <footer class="bg-body-tertiary text-center">
   <!-- Grid container -->
   <div class="container">
@@ -98,5 +89,4 @@
   </div>
   <!-- Copyright -->
 </footer>
-
 </html>

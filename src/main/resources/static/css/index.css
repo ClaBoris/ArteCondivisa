@@ -36,7 +36,7 @@ body {
 }
 
 .d-inline-block{
-	margin-left: -58px;
+	/*margin-left: -58px;*/
 	margin-bottom: -16px;
 	margin-top: -48px;
 }
@@ -108,4 +108,9 @@ h1 {
 	display:flex;
 	justify-content: flex-end;
 	padding-right: 2%;
+}
+
+.d-inline-block {
+    /*display: inline-block!important;*/
+    margin-left: -43px;
 }

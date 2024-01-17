@@ -20,7 +20,7 @@ padding-top: 5%!important;
 
 
 .navbar-brand{
-	margin-left: -85px;
+	margin-left: -68px;
 	font-size: 30px!important;
 	font-family: 'Zeyada', cursive;
 	margin-bottom: -12px;
@@ -50,8 +50,60 @@ footer{
 }
 
 
-.main-container{
-	
+.d-inline-block{
+	/*margin-left: -58px;*/
+	margin-bottom: -16px;
+	margin-top: -48px;
 }
 
+h1{
+	font-size:50px;
+	margin-top:20px;
+	text-align:center!important;
+	font-family:'PT Sans Narrow';	
+	margin-bottom:10px!important;
+}
+
+.main-container{
+	text-align:center;
+	margin-top:20px;
+	box-shadow: 0 4px 8px rgba(106, 90, 126, 1.1);
+	margin:20px auto!important;
+}
+
+.main-container img {
+    max-width: 410px;
+    box-shadow: 0 4px 8px rgba(106, 90, 126, 0.5); /* Aggiunge un'ombra dietro l'immagine */
+}
+
+ .main-container p{
+	margin-bottom:10px!important;
+	font-family:'PT Sans Narrow';
+	margin-top:20px;
+}
+
+
+body {
+    height: 80%;
+    background-image: url('../images/wallpaper.jpg'); /* Sostituisci con il percorso dell'immagine */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Aggiungi questa linea */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(255, 255, 255, 0.5);  Colore di sfondo con opacità del 70% */
+    z-index: -1;
+}
+
+.d-inline-block {
+    /*display: inline-block!important;*/
+    margin-left: -43px;
+}
 

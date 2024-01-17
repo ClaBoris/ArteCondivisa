@@ -25,7 +25,7 @@ public class DrawingValidator  implements Validator{
 		// TODO Auto-generated method stub
 		   Drawing drawing= (Drawing) target;
 	        if(drawing.getName() != null && drawingRepository.existsByName(drawing.getName())){
-	            errors.reject("movie.duplicate");
+	            errors.reject("drawing.duplicate");
 	        }
 	}
 }

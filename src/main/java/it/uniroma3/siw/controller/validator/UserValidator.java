@@ -20,6 +20,7 @@ public class UserValidator implements Validator {
 		return User.class.equals(clazz);
 	}
 
+	//non posso inserire uno user con email = ad altro user
 	@Override
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub

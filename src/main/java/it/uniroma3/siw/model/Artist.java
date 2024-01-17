@@ -1,16 +1,13 @@
 package it.uniroma3.siw.model;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Artist {
@@ -21,8 +18,6 @@ public class Artist {
 	private String name;
 
 	private String surname;
-
-	private LocalDate dateOfBirth;
 
 	private String nationality;
 
@@ -72,13 +67,6 @@ public class Artist {
 		this.nationality = nationality;
 	}
 
-	public LocalDate getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(LocalDate dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
 
 	@Override
 	public int hashCode() {

@@ -1,7 +1,5 @@
 package it.uniroma3.siw.service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,25 +29,14 @@ public class UserService {
 	        return this.userRepository.save(user);
 	    }
 
-//	    @Transactional
-//	    public List<User> getAllUsers() {
-//	        List<User> result = new ArrayList<>();
-//	        Iterable<User> iterable = this.userRepository.findAll();
-//	        for(User user : iterable)
-//	            result.add(user);
-//	        return result;
-//	    }
-//
-//	    @Transactional
-//	    public UserDetails getUserDetails(){
-//	        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//	        UserDetails userDetails = null;
-//	        if(!(authentication instanceof AnonymousAuthenticationToken)){
-//	            userDetails = (UserDetails)authentication.getPrincipal();
-//	        }
-//	        return userDetails;
-//	    }
-//	    
-//	    
+	    @Transactional
+	    public UserDetails getUserDetails(){
+	        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	        UserDetails userDetails = null;
+	        if(!(authentication instanceof AnonymousAuthenticationToken)){
+	            userDetails = (UserDetails)authentication.getPrincipal();
+	        }
+	        return userDetails;
+	    }
 
 }

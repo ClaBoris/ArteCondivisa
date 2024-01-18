@@ -73,14 +73,14 @@ public class AuthConfiguration {
 		.deleteCookies("JSESSIONID")
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.clearAuthentication(true)
-		.permitAll();
-		//.and()
-		//.exceptionHandling().accessDeniedHandler(accessDeniedHandler());
+		.permitAll()
+		.and()
+		.exceptionHandling().accessDeniedHandler(accessDeniedHandler());
 		return httpSecurity.build();
 	}
 	
-//	@Bean
-//    public AccessDeniedHandler accessDeniedHandler() {
-//        return new CustomAccessDeniedHandler(); // Implementa una classe CustomAccessDeniedHandler per gestire l'accesso negato
-//    }
+	@Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+        return new CustomAccessDeniedHandler(); // Implementa una classe CustomAccessDeniedHandler per gestire l'accesso negato
+    }
 }

@@ -1,5 +1,7 @@
 package it.uniroma3.siw.model;
 
+import java.util.Objects;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -63,4 +65,27 @@ public class Credentials {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(user, username);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Credentials other = (Credentials) obj;
+		return Objects.equals(user, other.user) && Objects.equals(username, other.username);
+	}
+	
+
 }
+
+
+
+

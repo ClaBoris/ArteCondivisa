@@ -22,24 +22,24 @@ public class DrawingService {
 
 
 
-	 @Transactional
-	    public boolean removeDrawing(Long drawingId) {
-		        if(drawingRepository.existsById(drawingId)) {
-		        	 drawingRepository.deleteById(drawingId);
-		        	 return true; //ho trovato il disegno
-		        }
-            	return false;
-	    }
-	 
-	 public Iterable<Drawing> getAllDrawings(){
-		 return drawingRepository.findAll();
-	 }
+	@Transactional
+	public boolean removeDrawing(Long drawingId) {
+		if(drawingRepository.existsById(drawingId)) {
+			drawingRepository.deleteById(drawingId);
+			return true; //ho trovato il disegno
+		}
+		return false;
+	}
+
+	public Iterable<Drawing> getAllDrawings(){
+		return drawingRepository.findAll();
+	}
 
 	public List<Drawing> getDrawingsByArtist(Long artistId) {
 		// TODO Auto-generated method stub
 		return drawingRepository.findByArtistId(artistId);
 	}
-	
+
 	public void edit(Drawing drawing, Long drawingId) {
 		Drawing my_drawing = this.drawingRepository.findById(drawingId).orElse(null);
 		my_drawing.setName(drawing.getName());

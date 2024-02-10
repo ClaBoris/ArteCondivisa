@@ -46,7 +46,7 @@ public class GlobalController {
 
 	@Autowired
 	private ArtistValidator artistValidator;
-	
+
 	@Autowired
 	private UserValidator userValidator;
 
@@ -60,17 +60,36 @@ public class GlobalController {
 	@Autowired
 	private ArtistService artistService;
 
-	
+
 
 	@GetMapping("/")
 	public String index(Model model) {
 		return "index.html";
 	}
 
+//	@GetMapping("/index_home")
+//	public String index_home(Model model){
+//		model.addAttribute("drawings", this.drawingRepository.findAll());
+//		return "index2.html";
+//	}
+	
 	@GetMapping("/index_home")
 	public String index_home(Model model){
+		UserDetails userDetails = this.userService.getUserDetails();
+		Credentials credentials = this.credentialsService.getCredentials(userDetails.getUsername());
+		if(credentials!= null && credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
+			model.addAttribute("drawings", this.drawingRepository.findAll());
+			return "index2.html";
+		}else {
+			model.addAttribute("drawings", this.drawingRepository.findAll());
+			return "user_home.html";
+		}
+	}
+
+	@GetMapping("/user_home")
+	public String user_home(Model model){
 		model.addAttribute("drawings", this.drawingRepository.findAll());
-		return "index2.html";
+		return "user_home.html";
 	}
 
 	@GetMapping("/success")
@@ -88,7 +107,7 @@ public class GlobalController {
 		}
 		/*model.addAttribute("userDetails", userDetails);*/
 		model.addAttribute("drawings", this.drawingRepository.findAll());
-		return "index2.html";
+		return "user_home.html";
 	}
 
 
@@ -117,6 +136,12 @@ public class GlobalController {
 		return "artists.html";
 	}
 
+	@GetMapping("/showArtistsForUser")
+	public String showArtistsForUser(Model model){
+		model.addAttribute("artists", this.artistRepository.findAll());
+		return "artistsForUser.html";
+	}
+
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") User user,BindingResult userBindingResult, @Valid @ModelAttribute("credentials") Credentials credentials,
 			BindingResult credentialsBindingResult, Model model) {
@@ -128,27 +153,52 @@ public class GlobalController {
 			userService.saveUser(user);
 			model.addAttribute("user", user);
 			return "formLogin.html";
+		}else
+		{
+			if(userBindingResult.hasErrors()){
+				model.addAttribute("registrationErrorUser", "Mail già in uso");
+			}
+			model.addAttribute("registrationError", "Username già in uso");
 		}
 		return "formRegister.html";
 	}
-	
+
 	@GetMapping("/formNewDrawing")
 	public String formNewDrawing(Model model){
 		model.addAttribute("drawing", new Drawing());
 		model.addAttribute("artists", this.artistRepository.findAll());
 		return "formNewDrawing.html";
 	}
-	@PostMapping("/newDrawing")
-	public String newDrawing(@ModelAttribute("drawing") Drawing drawing,  Model model){
-		if(!drawingRepository.existsByName(drawing.getName())){
-			this.drawingRepository.save(drawing);
-			model.addAttribute("drawing", drawing);
-			return "drawing.html";
+		@PostMapping("/newDrawing")
+		public String newDrawing(@ModelAttribute("drawing") Drawing drawing,  Model model){
+			if(!drawingRepository.existsByName(drawing.getName())){
+				this.drawingRepository.save(drawing);
+				model.addAttribute("drawing", drawing);
+				return "drawing.html";
+			}
+			else{
+				return "formNewDrawing.html";
+			}
 		}
-		else{
-			return "formNewDrawing.html";
-		}
-	}
+
+//	@PostMapping("/newDrawing")
+//	public String newDrawing(@ModelAttribute("drawing") Drawing drawing,  Model model, @Valid @ModelAttribute("credentials")Credentials credentials,
+//			BindingResult credentialsBindingResult){
+//		String username = credentials.getUsername();
+//		if(username!=null && credentials.getRole().equals(Credentials.ADMIN_ROLE)) {    
+//			if(!drawingRepository.existsByName(drawing.getName())){
+//				this.drawingRepository.save(drawing);
+//				model.addAttribute("drawing", drawing);
+//				return "drawing.html";
+//			}
+//		}else {
+//					this.drawingRepository.save(drawing);
+//					model.addAttribute("drawing", drawing);
+//					return "drawing_user.html";
+//			}
+//		return "formNewDrawing.html";
+//	}
+	
 	@PostMapping("/newDrawing/{id}")
 	public String updateDrawing(@ModelAttribute("drawing") Drawing drawing,@PathVariable("id") Long drawingId,  Model model){
 		this.drawingService.edit(drawing, drawingId);

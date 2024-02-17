@@ -1,7 +1,3 @@
-nav {
-	background-color: thistle !important;
-	/* Colore di sfondo della barra di navigazione */
-}
 
 body {
 	height: 80%;
@@ -13,47 +9,8 @@ body {
 	/* Aggiungi questa linea */
 }
 
-.nav-item {
-	margin-left: -0px;
-	font-size: 30px !important;
-	font-family: 'Zeyada', cursive;
-	margin-bottom: -12px;
-}
 
-.navbar {
-	max-height: 150px;
-}
 
-.navbar-nav {
-	padding-top: 5% !important;
-}
-
-.navbar-brand {
-	margin-left: -68px;
-	font-size: 30px !important;
-	font-family: 'Zeyada', cursive;
-	margin-bottom: -12px;
-}
-
-.d-inline-block {
-	/*margin-left: -58px;*/
-	margin-bottom: -16px;
-	margin-top: -48px;
-}
-
-footer {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	width: 100%;
-	height: 20%;
-	font-family: 'Zeyada', cursive;
-	background-color: thistle !important;
-}
-
-.navbar-expand-lg {
-	box-shadow: 0 4px 8px rgba(106, 90, 126, 1.1);
-}
 
 ul {
 	display: flex;
@@ -161,11 +118,7 @@ li {
 	margin-left: 5%;
 }
 
-.navbar-collapse {
-	display: flex;
-	justify-content: flex-end;
-	padding-right: 2%;
-}
+
 
 .main-container {
 	margin-top: 10%;
@@ -190,7 +143,3 @@ li {
 	margin-top:20px;
 }
 
-.d-inline-block {
-    /*display: inline-block!important;*/
-    margin-left: -43px;
-}

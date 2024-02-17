@@ -26,36 +26,10 @@ body {
   border-radius: 1rem;
 }
 
-footer{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	width: 100%;
-	height: 20%;
-	font-family: 'Zeyada', cursive;
-}
 
 
-.nav-item{
-	margin-left: -0px;
-	font-size: 30px!important;
-	font-family: 'Zeyada', cursive;
-	margin-bottom: -12px;
-}
 
-.navbar{
-max-height: 150px;
-}
-/*.navbar-nav{
-padding-top: 5%!important;
-}*/
 
-.navbar-brand{
-	margin-left: -85px;
-	font-size: 30px!important;
-	font-family: 'Zeyada', cursive;
-	margin-bottom: -12px;
-}
 
 header{
     text-align: center;
@@ -64,19 +38,7 @@ header{
 }
 
 
-footer{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	width: 100%;
-	height: 20%;
-	font-family: 'Zeyada', cursive;
-	background-color: thistle!important;
-}
 
-nav {
-	box-shadow: 0 4px 8px rgba(106, 90, 126, 1.1);
-}
 
 /*ul{
 display: flex;
@@ -115,11 +77,6 @@ color: white!important;
 margin-left: 0%;
 }
 
-.navbar-collapse{
-	display:flex;
-	justify-content: flex-end;
-	padding-right: 2%;
-}
 .main-container{
 	margin-top: 10%;
 	margin-bottom: 10%;
@@ -134,9 +91,6 @@ text-decoration: none;
 color: white;
 }
 
-nav {
-    background-color:thistle!important; /* Colore di sfondo della barra di navigazione */
-}
 
 .form-container{
 	font-family: 'PT Sans Narrow';
@@ -146,15 +100,7 @@ nav {
 	margin-bottom:15px!important;
 }
 
-footer{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	width: 100%;
-	height: 20%;
-	font-family: 'Zeyada', cursive;
-	margin-bottom: -158px;
-}
+
 
 .input-select{
 	border-radius:10pt!important;
@@ -167,7 +113,3 @@ footer{
 	width:60%;
 }
 
-.d-inline-block {
-    /*display: inline-block!important;*/
-    margin-left: -43px;
-}

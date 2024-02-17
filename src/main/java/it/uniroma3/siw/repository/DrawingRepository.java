@@ -20,5 +20,8 @@ public interface DrawingRepository extends CrudRepository<Drawing,Long>{
 	@Modifying
     @Query("DELETE FROM Drawing d WHERE d.artist.id = :artistId")
 	void deleteByArtistId(Long artistId);
+	
+	
+	
 
 }

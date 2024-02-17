@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ArteCondivisa</title>
 	<link rel="stylesheet" href="/css/index2.css">
-
+<link rel="stylesheet" href="/css/nav.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -55,6 +55,7 @@
 </nav>
 
 <body>
+	<!--se voglio aggiungere scritte metterle qui..-->
 	<div class="main-container">
 		<div class="container-main-scroller">
 			<div class="media-scroller snaps-inline">
@@ -62,13 +63,10 @@
 					<img class="card-image image-fit" th:src="${drawing.image}"></img>
 					<div class="card-body">
 						<h5 class="card-title" th:text="${drawing.name}">Titolo del disegno</h5>
+						<h6>Artista:</h6>
+						<p class="card-text" th:if="${drawing.artist}" th:text="${drawing.artist.name} + ' ' + ${drawing.artist.surname}" >descrizione</p>
 						<h6>Descrizione:</h6>
 						<p class="card-text" th:text="${drawing.description}">descrizione</p>
-					<!--	<div class="card-button">
-							<a th:href="@{'/admin/removeDrawing/' + ${drawing.id}}" class="btn"
-								id="link-btn">elimina</a>
-							<a th:href="@{'/formUpdateDrawing/' + ${drawing.id}}" class="btn" id="link-btn">modifica</a>
-						</div>-->
 					</div>
 				</div>
 			</div>
